@@ -61,9 +61,9 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-task-background to-transparent z-10 h-[20%] bottom-0"></div>
           <div className="relative z-0 rounded-xl overflow-hidden border border-task-border shadow-2xl mx-auto max-w-5xl">
             <img 
-              src="/lovable-uploads/894f218f-da7b-4c6e-b090-de935cda94f8.png" 
+              src="/lovable-uploads/ac0c25e3-a287-4a91-aaf5-4e5463a10689.png" 
               alt="TaskFlow Dashboard" 
-              className="w-full h-auto object-contain"
+              className="w-full h-auto"
             />
           </div>
         </div>

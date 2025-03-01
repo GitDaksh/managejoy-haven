@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -35,7 +34,7 @@ const features = [
         <path d="M16 18h.01" />
       </svg>
     ),
-    image: "https://cdn.dribbble.com/users/1615584/screenshots/16142695/media/c74a224eea8a9aca749f0b1a2a319e06.jpg?resize=1600x1200&vertical=center"
+    image: "/lovable-uploads/239c646c-08f2-45fe-acd1-9d2ae196ea8c.png"
   },
   {
     id: "collaboration",
@@ -83,8 +82,8 @@ const FeaturesSection = () => {
         </div>
 
         <Tabs defaultValue="tasks" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-            <div className="w-full lg:w-1/3">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+            <div className="lg:col-span-1">
               <TabsList className="flex flex-col w-full bg-transparent space-y-1">
                 {features.map((feature) => (
                   <TabsTrigger
@@ -112,7 +111,7 @@ const FeaturesSection = () => {
               </TabsList>
             </div>
 
-            <div className="w-full lg:w-2/3 bg-white rounded-xl border border-task-border/50 p-1 shadow-lg overflow-hidden">
+            <div className="lg:col-span-2 bg-white rounded-xl border border-task-border/50 p-1 shadow-lg overflow-hidden">
               {features.map((feature) => (
                 <TabsContent key={feature.id} value={feature.id} className="mt-0 w-full h-full">
                   <div className="relative rounded-lg overflow-hidden aspect-[16/10]">
