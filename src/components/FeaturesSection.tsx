@@ -15,7 +15,7 @@ const features = [
         <path d="M15 9h.01" />
       </svg>
     ),
-    image: "https://cdn.dribbble.com/users/1726280/screenshots/16323742/media/f3e6e666e01bb6ee87bcfd251f72b0a8.jpg?resize=1600x1200&vertical=center"
+    image: "/lovable-uploads/07a51961-878a-428b-9562-b51e51228da2.png"
   },
   {
     id: "calendar",
@@ -69,7 +69,7 @@ const FeaturesSection = () => {
   const [activeTab, setActiveTab] = useState("tasks");
 
   return (
-    <section className="section bg-task-secondary/50 relative overflow-hidden">
+    <section className="section bg-task-secondary/50 relative overflow-hidden py-16 md:py-24">
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-task-accent/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-task-primary/5 rounded-full filter blur-3xl"></div>
       
