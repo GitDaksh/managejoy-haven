@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -48,7 +49,7 @@ const features = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    image: "https://cdn.dribbble.com/users/2096507/screenshots/14485648/media/3d21eb3f99dcc9264907100b5a61dcf7.png?resize=1600x1200&vertical=center"
+    image: "/lovable-uploads/07a51961-878a-428b-9562-b51e51228da2.png"
   },
   {
     id: "analytics",
@@ -60,7 +61,7 @@ const features = [
         <path d="m19 9-5 5-4-4-3 3" />
       </svg>
     ),
-    image: "https://cdn.dribbble.com/users/2376408/screenshots/15800848/media/09a4d94d33efba65a81ccf0840824a2a.png?resize=1600x1200&vertical=center"
+    image: "/lovable-uploads/239c646c-08f2-45fe-acd1-9d2ae196ea8c.png"
   }
 ];
 
@@ -81,51 +82,57 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="tasks" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-            <div className="lg:col-span-1">
-              <TabsList className="flex flex-col w-full bg-transparent space-y-1">
-                {features.map((feature) => (
-                  <TabsTrigger
-                    key={feature.id}
-                    value={feature.id}
-                    className={`flex items-start gap-4 p-4 rounded-lg text-left w-full transition-all ${
-                      activeTab === feature.id
-                        ? "bg-white shadow-sm border border-task-border/50"
-                        : "hover:bg-white/50"
-                    }`}
-                  >
-                    <span className={`mt-1 ${activeTab === feature.id ? "text-task-primary" : "text-task-muted"}`}>
-                      {feature.icon}
-                    </span>
-                    <div className="flex flex-col gap-1">
-                      <span className={`font-medium ${activeTab === feature.id ? "text-task-primary" : "text-task-foreground"}`}>
-                        {feature.title}
+        <div className="max-w-6xl mx-auto">
+          <Tabs defaultValue="tasks" value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Features List */}
+              <div className="md:w-1/3">
+                <TabsList className="flex flex-col w-full bg-transparent space-y-1">
+                  {features.map((feature) => (
+                    <TabsTrigger
+                      key={feature.id}
+                      value={feature.id}
+                      className={`flex items-start gap-4 p-4 rounded-lg text-left w-full transition-all ${
+                        activeTab === feature.id
+                          ? "bg-white shadow-sm border border-task-border/50"
+                          : "hover:bg-white/50"
+                      }`}
+                    >
+                      <span className={`mt-1 ${activeTab === feature.id ? "text-task-primary" : "text-task-muted"}`}>
+                        {feature.icon}
                       </span>
-                      <span className="text-sm text-task-foreground/70">
-                        {feature.description}
-                      </span>
-                    </div>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
+                      <div className="flex flex-col gap-1">
+                        <span className={`font-medium ${activeTab === feature.id ? "text-task-primary" : "text-task-foreground"}`}>
+                          {feature.title}
+                        </span>
+                        <span className="text-sm text-task-foreground/70">
+                          {feature.description}
+                        </span>
+                      </div>
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
 
-            <div className="lg:col-span-2 bg-white rounded-xl border border-task-border/50 p-1 shadow-lg overflow-hidden">
-              {features.map((feature) => (
-                <TabsContent key={feature.id} value={feature.id} className="mt-0 w-full h-full">
-                  <div className="relative rounded-lg overflow-hidden aspect-[16/10]">
-                    <img 
-                      src={feature.image} 
-                      alt={feature.title} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </TabsContent>
-              ))}
+              {/* Feature Image */}
+              <div className="md:w-2/3">
+                <div className="bg-white rounded-xl border border-task-border/50 p-2 shadow-lg overflow-hidden h-full">
+                  {features.map((feature) => (
+                    <TabsContent key={feature.id} value={feature.id} className="mt-0 w-full h-full">
+                      <div className="rounded-lg overflow-hidden">
+                        <img 
+                          src={feature.image} 
+                          alt={feature.title} 
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </TabsContent>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </Tabs>
+          </Tabs>
+        </div>
       </div>
     </section>
   );
