@@ -56,14 +56,14 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Dashboard Preview - Improved with better styling */}
+        {/* Dashboard Preview - Fixed with proper image and styling */}
         <div className="mt-16 md:mt-20 relative animate-slide-up" style={{ animationDelay: '400ms' }}>
           <div className="absolute inset-0 bg-gradient-to-t from-task-background to-transparent z-10 h-[20%] bottom-0"></div>
-          <div className="relative z-0 rounded-xl overflow-hidden border border-task-border shadow-2xl">
+          <div className="relative z-0 rounded-xl overflow-hidden border border-task-border shadow-2xl mx-auto max-w-5xl">
             <img 
               src="/lovable-uploads/894f218f-da7b-4c6e-b090-de935cda94f8.png" 
               alt="TaskFlow Dashboard" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>

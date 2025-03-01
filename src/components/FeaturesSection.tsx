@@ -83,8 +83,8 @@ const FeaturesSection = () => {
         </div>
 
         <Tabs defaultValue="tasks" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-            <div className="md:w-1/3">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+            <div className="w-full lg:w-1/3">
               <TabsList className="flex flex-col w-full bg-transparent space-y-1">
                 {features.map((feature) => (
                   <TabsTrigger
@@ -112,7 +112,7 @@ const FeaturesSection = () => {
               </TabsList>
             </div>
 
-            <div className="md:w-2/3 bg-white rounded-xl border border-task-border/50 p-1 shadow-lg overflow-hidden">
+            <div className="w-full lg:w-2/3 bg-white rounded-xl border border-task-border/50 p-1 shadow-lg overflow-hidden">
               {features.map((feature) => (
                 <TabsContent key={feature.id} value={feature.id} className="mt-0 w-full h-full">
                   <div className="relative rounded-lg overflow-hidden aspect-[16/10]">
